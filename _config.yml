@@ -1,0 +1,17 @@
+title: nucular writes
+description: I write text n shit
+
+baseurl: "/blog"
+url: "https://nucular.github.io"
+
+author:
+  fullname: Jakob E
+  github: nucular
+  twitter: nucular
+  reddit: nucular_
+  keybase: nucular
+
+disqus: nucblog
+
+gems:
+  - jekyll-sitemap

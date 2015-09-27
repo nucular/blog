@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% if page.title %}{{ page.title }} &middot; {% endif %}{{ site.title }}</title>
+  {% if page.description %}
+  <meta name="description" content="{{ page.description }}" />
+  {% endif %}
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+  <link rel="stylesheet" href="{{site.baseurl}}/css/syntax.css" type="text/css"/>
+  <link rel="stylesheet" href="{{site.baseurl}}/css/main.css" type="text/css"/>
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,700,400' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  {{ content }}
+</body>
+</html>
