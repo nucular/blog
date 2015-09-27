@@ -1,11 +1,38 @@
 ---
 ---
 
+$background-color: #fff;
+$text-color: #333;
+
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
 body {
   font-family: "Roboto", sans-serif;
-  color: #333;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  
+  background-color: $background-color;
+  color: $text-color;
+}
+
+main {
+  max-width: 768px;
+  margin: 2rem auto 0px auto;
+  padding: 0px 20px 0px 20px;
 }
 
 article > section.content {
   font-family: "Roboto Slab", serif;
+}
+
+.highlight {
+  background-color: darken($background-color, 1%);
+
+  > pre {
+    padding: 1.25rem;
+  }
 }
