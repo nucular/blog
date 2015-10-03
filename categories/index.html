@@ -1,0 +1,17 @@
+---
+title: Categories
+layout: article
+---
+
+{% for category in site.categories %}
+{% assign lastpost = category[1][0] %}
+{% assign postcount = category[1] | size %}
+
+<section class="categories">
+  <h2>
+    <a href="{{ site.baseurl }}/categories/{{ category | first }}.html">{{ category[0] }}</a>
+    <small>{% include pluralize.html number=postcount thing="post" %}</small>
+  </h2>
+  {% include postbox.html post=lastpost %}
+</section>
+{% endfor %}

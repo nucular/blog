@@ -1,10 +1,11 @@
 ---
 layout: article
+title: nucular writes
 description: I write text n shit
 ---
 
 <ul>
-  {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> - <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+  {% for post in site.posts limit:5 %}
+  {% include postbox.html post=post %}
   {% endfor %}
 </ul>

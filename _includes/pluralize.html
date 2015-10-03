@@ -1,0 +1,10 @@
+{% if include.number == 0 %}
+  No
+{% else %}
+  {{ include.number }}
+{% endif %}
+{% if include.number == 1 %}
+  {{ include.thing }}
+{% else %}
+  {{ include.thing }}s
+{% endif %}

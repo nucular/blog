@@ -1,0 +1,8 @@
+<p class="meta">
+  <small>
+    {{ include.post.date | date_to_string }} &middot;
+    #{% for category in include.post.categories %}
+      <a href="{{ site.baseurl }}/categories/{{ category }}.html">{{ category }}</a>{% if forloop.last == false %},{% endif %}
+    {% endfor %}
+  </small>
+</p>
