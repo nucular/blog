@@ -54,7 +54,15 @@ h1.post:before, h2.post:before {
   opacity: 0.5;
 }
 
+/* TODO: Use unicode and/or awesomefont? */
+
 h1.tag:before, h2.tag:before {
+  content: "# ";
+  color: $foreground-color;
+  opacity: 0.5;
+}
+
+h1.year:before, h2.year:before {
   content: "# ";
   color: $foreground-color;
   opacity: 0.5;

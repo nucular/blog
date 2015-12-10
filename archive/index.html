@@ -1,7 +1,36 @@
 ---
 title: Archive
 layout: article
-navorder: 1
+navorder: 2
 ---
 
-Coming soon (heh)
+<!-- thanks liquid -->
+<!-- partially based on http://stackoverflow.com/a/19104574/2405983 -->
+{% for post in site.posts %}
+
+  {% capture year %}{{ post.date | date: "%Y" }}{% endcapture %}
+  {% capture nextyear %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
+
+  {% if forloop.first %}
+    {% assign postcount = 0 %}
+    <section>
+      <h2 class="year">
+        <a href="{{ site.baseurl }}/archive/{{ year }}.html">{{ year }}</a>
+  {% endif %}
+
+  {% assign postcount = postcount | plus:1 %}
+
+  {% if year != nextyear %}
+      <small>{% include pluralize.html number=postcount thing="post" %}</small>
+    </h2>
+    {% include postbox.html post=post %}
+    {% if forloop.last == false %}
+      {% assign postcount = 0 %}
+      <section>
+        <h2 class="year">
+          <a href="{{ site.baseurl }}/archive/{{ year }}.html">{{ year }}</a>
+    {% endif %}
+    </section>
+  {% endif %}
+
+{% endfor %}
