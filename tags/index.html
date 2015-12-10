@@ -1,0 +1,18 @@
+---
+title: Tags
+layout: article
+navorder: 2
+---
+
+{% for tag in site.tags %}
+{% assign lastpost = tag[1][0] %}
+{% assign postcount = tag[1] | size %}
+
+<section class="tags">
+  <h2 class="tag">
+    <a href="{{ site.baseurl }}/tags/{{ tag | first }}.html">{{ tag[0] }}</a>
+    <small>{% include pluralize.html number=postcount thing="post" %}</small>
+  </h2>
+  {% include postbox.html post=lastpost %}
+</section>
+{% endfor %}

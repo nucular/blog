@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+{% include header.html %}
+{% include nav.html %}
+
+<article>
+
+  <header>
+    <h1 class="tag">{{ page.tag }}{% if page.subtitle %}<br/><span>{{ page.subtitle }}</span>{% endif %}</h1>
+  </header>
+
+  {{ content }}
+  
+  {% for post in site.tags[page.tag] %}
+    {% include postbox.html post=post %}
+  {% endfor %}
+
+</article>
+
+{% include footer.html %}
