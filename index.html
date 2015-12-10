@@ -5,8 +5,6 @@ description: I write text n shit
 navorder: 1
 ---
 
-<ul>
-  {% for post in site.posts limit:5 %}
+{% for post in site.posts limit:5 %}
   {% include postbox.html post=post %}
-  {% endfor %}
-</ul>
+{% endfor %}

@@ -1,9 +1,9 @@
 <div class="postbox{% if include.brief %} brief{% endif %}">
   <h1><a href="{{ site.baseurl }}{{ include.post.url }}" name="{{ include.post.id | slugify }}">{{ include.post.title }}</a></h1>
   {% if include.brief %}
-  {{ include.post.excerpt | strip_html | truncatewords: 20 }}
+    {{ include.post.excerpt | strip_html | truncatewords: 20 }}
   {% else %}
-  {{ include.post.excerpt | strip_html | truncatewords: 30 }}
+    {{ include.post.excerpt | strip_html | truncatewords: 30 }}
   {% endif %}
   <a href="{{ site.baseurl }}{{ include.post.url }}">More</a>
   {% include postmeta.html post=include.post %}

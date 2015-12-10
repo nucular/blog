@@ -1,6 +1,7 @@
 <nav>
   <ul>
-    {% for link in site.pages | sort:'navorder' %}
+    {% assign sorted = site.pages | sort:'navorder' %}
+    {% for link in sorted %}
       {% if link.navorder %}
         <a {% if page.url == link.url %}class="active"{% endif %}
           href="{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
