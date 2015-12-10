@@ -19,4 +19,4 @@ gems:
 highlighter: pygments
 sass:
   sass_dir: css/partials
-  theme: dark
+  theme: light
