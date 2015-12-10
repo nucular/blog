@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+{% include header.html %}
+{% include nav.html %}
+
+<article>
+
+  <header>
+    <h1 class="year">{{ page.year }}{% if page.subtitle %}<br/><span>{{ page.subtitle }}</span>{% endif %}</h1>
+  </header>
+
+  {{ content }}
+
+  {% for post in site.posts  %}
+    {% capture year %}{{ post.date | date: "%Y" }}{% endcapture %}
+    {% assign year = year | times: 1 %} <!-- thanks liquid -->
+    {% if year == page.year %}
+      {% include postbox.html post=post %}
+    {% endif %}
+  {% endfor %}
+
+</article>
+
+{% include footer.html %}

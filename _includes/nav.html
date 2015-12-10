@@ -1,7 +1,10 @@
 <nav>
   <ul>
-    <a href="{{ site.baseurl }}/index.html">Home</a>
-    <a href="{{ site.baseurl }}/categories/index.html">Categories</a>
-    <a href="{{ site.baseurl }}/archive/index.html">Archive</a>
+    {% for link in site.pages | sort:'navorder' %}
+      {% if link.navorder %}
+        <a {% if page.url == link.url %}class="active"{% endif %}
+          href="{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
+      {% endif %}
+    {% endfor %}
   </ul>
 </nav>
