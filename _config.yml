@@ -5,9 +5,10 @@ baseurl: "/blog"
 url: "https://nucular.github.io"
 
 author:
+  name: nucular
   fullname: Jakob E
   github: nucular
-  twitter: nucular
+  twitter: nucularer
   reddit: nucular_
   keybase: nucular
 
@@ -16,3 +17,6 @@ disqus: nucblog
 gems:
   - jekyll-sitemap
 highlighter: pygments
+sass:
+  sass_dir: css/partials
+  theme: dark

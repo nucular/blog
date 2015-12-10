@@ -15,10 +15,10 @@ layout: none
   {% for post in site.posts %}
     <item>
       <title>{{ post.title }}</title>
-      <link href="{{ site.url }}{{ site.baseurl }}{{ post.url }}"/>
+      <link href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" rel="self">{{ site.url }}{{ site.baseurl }}{{ post.url }}</link>
       <description>{{ post.description }}</description>
-      <guid isPermaLink="false">{{ post.id }}</guid>
-      <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
+      <guid isPermaLink="false">{{ post.id | slugify }}</guid>
+      <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
     </item>
   {% endfor %}
 

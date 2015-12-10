@@ -8,7 +8,7 @@ layout: none
   <link href="{{ site.url }}{{ site.baseurl }}/index.html"></link>
   <link href="{{ site.url }}{{ site.baseurl }}/atom.xml" rel="self"/>
   <description>{{ site.description }}</description>
-  <updated>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</updated>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
   <id>{{ site.url }}{{ site.baseurl }}/</id>
   <author>
     <name>{{ site.author.fullname }}</name>
@@ -17,11 +17,11 @@ layout: none
   {% for post in site.posts %}
     <entry>
       <title>{{ post.title }}</title>
-      <link href="{{ site.url }}{{ site.baseurl }}{{ post.url }}"/>
+      <link href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" rel="self">{{ site.url }}{{ site.baseurl }}{{ post.url }}</link>
       <summary>{{ post.description }}</summary>
       <updated>{{ post.date | date_to_xmlschema }}</updated>
-      <id>{{ post.id }}</id>
-      <content type="html">{{ post.content | xml_escape }}</content>
+      <id>{{ post.id | slugify }}</id>
+      <content type="text">{{ post.excerpt | strip_html | truncatewords: 30 | xml_escape }}</content>
     </entry>
   {% endfor %}
 
