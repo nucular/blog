@@ -144,6 +144,10 @@ main {
       }
     }
 
+    > section.post > p.license {
+      float: right;
+    }
+
     > section.comments {
       padding-bottom: 10px;
     }

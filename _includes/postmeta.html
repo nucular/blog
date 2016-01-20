@@ -1,7 +1,8 @@
 <p class="meta">
   <small>
     {{ include.post.date | date: "%-d %B" }}
-    <a href="{{ site.baseurl }}/archive/{{ include.post.date | date: "%Y" }}.html#{{ include.post.id | slugify }}">{{ include.post.date | date: "%Y" }}</a> &middot;
+    <a href="{{ site.baseurl }}/archive/{{ include.post.date | date: "%Y" }}.html#{{ include.post.id | slugify }}">{{ include.post.date | date: "%Y" }}</a>
+    &middot;
     #{% for tag in include.post.tags %}
       <a href="{{ site.baseurl }}/tags/{{ tag }}.html#{{ include.post.id | slugify }}">{{ tag }}</a>{% if forloop.last == false %},{% endif %}
     {% endfor %}

@@ -3,6 +3,7 @@ description: I write text n shit
 
 baseurl: "/blog"
 url: "https://nucular.github.io"
+repo: "https://github.com/nucular/blog"
 
 author:
   name: nucular

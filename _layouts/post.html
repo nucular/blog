@@ -5,9 +5,8 @@ layout: article
 <section class="post">
   {{ content }}
 
-  {% if page.categories %}
-    {% include postmeta.html post=page %}
-  {% endif %}
+  {% include postlicense.html post=page %}
+  {% include postmeta.html post=page %}
 </section>
 
 <section class="related">
