@@ -3,7 +3,7 @@ layout: default
 ---
 
 {% include header.html %}
-{% include nav.html %}
+{% include navbar.html %}
 
 <article>
 
@@ -12,7 +12,7 @@ layout: default
   </header>
 
   {{ content }}
-  
+
   {% for post in site.tags[page.tag] %}
     {% include postbox.html post=post %}
   {% endfor %}

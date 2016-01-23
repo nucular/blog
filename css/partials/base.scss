@@ -108,11 +108,11 @@ main {
     margin-top: 20px;
     margin-bottom: 20px;
 
-    > ul {
+    > div {
       display: flex;
       justify-content: space-around;
 
-      > a, li {
+      > a {
         display: block;
         width: 100%;
         text-align: center;
@@ -125,7 +125,7 @@ main {
         text-decoration: none;
       }
 
-      > a.active, > a:hover, > li.active, li.hover
+      > a.active, > a:hover
       {
         border-bottom-color: $foreground-color;
       }
@@ -144,8 +144,10 @@ main {
       }
     }
 
-    > section.post > p.license {
-      float: right;
+    > section.post {
+      > .meta > .license {
+        float: right;
+      }
     }
 
     > section.comments {

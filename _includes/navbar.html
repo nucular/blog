@@ -1,5 +1,5 @@
 <nav>
-  <ul>
+  <div>
     {% assign sorted = site.pages | sort:'navorder' %}
     {% for link in sorted %}
       {% if link.navorder %}
@@ -7,5 +7,5 @@
           href="{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
       {% endif %}
     {% endfor %}
-  </ul>
+  </div>
 </nav>

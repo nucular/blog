@@ -5,8 +5,10 @@ layout: article
 <section class="post">
   {{ content }}
 
-  {% include postlicense.html post=page %}
-  {% include postmeta.html post=page %}
+  <p class="meta">
+    {% include postlicense.html post=page %}
+    {% include postmeta.html post=page %}
+  </p>
 </section>
 
 <section class="related">
